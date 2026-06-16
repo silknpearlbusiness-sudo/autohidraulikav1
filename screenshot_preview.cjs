@@ -1,0 +1,20 @@
+const { chromium } = require('playwright');
+(async () => {
+  const b = await chromium.launch({ headless: true });
+  const p = await b.newPage();
+  await p.setViewportSize({ width: 1440, height: 900 });
+  await p.goto('http://localhost:5174', { waitUntil: 'networkidle', timeout: 25000 });
+  await p.waitForTimeout(2500);
+  await p.screenshot({ path: 'C:/Users/ilikenyash/Downloads/preview_hero.png' });
+  await p.evaluate(() => window.scrollTo(0, 1100));
+  await p.waitForTimeout(900);
+  await p.screenshot({ path: 'C:/Users/ilikenyash/Downloads/preview_services.png' });
+  await p.evaluate(() => window.scrollTo(0, 3200));
+  await p.waitForTimeout(900);
+  await p.screenshot({ path: 'C:/Users/ilikenyash/Downloads/preview_whyus.png' });
+  await p.evaluate(() => window.scrollTo(0, 6800));
+  await p.waitForTimeout(900);
+  await p.screenshot({ path: 'C:/Users/ilikenyash/Downloads/preview_contact.png' });
+  await b.close();
+  console.log('done');
+})();
