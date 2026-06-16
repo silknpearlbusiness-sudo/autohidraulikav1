@@ -777,7 +777,50 @@ function Home() {
         </div>
       </section>
 
-      
+      <section
+        className="relative overflow-hidden py-20"
+        style={{ background: "linear-gradient(135deg, hsl(32 92% 52%), hsl(20 88% 36%))" }}
+      >
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{ backgroundImage: "repeating-linear-gradient(45deg, transparent, transparent 20px, rgba(0,0,0,0.05) 20px, rgba(0,0,0,0.05) 21px)" }}
+        />
+        <div className="container mx-auto px-6 relative z-10">
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-10">
+            <Reveal>
+              <div>
+                <p className="text-white/60 text-xs font-semibold uppercase tracking-[0.22em] mb-4">
+                  Ingyenes tanácsadás · 24 órán belüli kiszállás
+                </p>
+                <h2 className="text-4xl md:text-[3.5rem] font-black text-white" style={{ lineHeight: 0.9, fontWeight: 900 }}>
+                  Kész a javítás?<br />Mi is azok vagyunk.
+                </h2>
+              </div>
+            </Reveal>
+            <Reveal delay={120}>
+              <div className="flex flex-col sm:flex-row gap-4 shrink-0">
+                <a
+                  href="#kapcsolat"
+                  className="btn-hover inline-flex items-center justify-center gap-2.5 h-14 px-10 rounded-full text-base font-bold no-underline"
+                  style={{ background: "white", color: "hsl(20 88% 34%)", boxShadow: "0 14px 40px rgba(0,0,0,0.22)" }}
+                >
+                  Árajánlatot kérek
+                  <ChevronRight size={16} />
+                </a>
+                <a
+                  href="tel:+36706734444"
+                  className="inline-flex items-center justify-center gap-2.5 h-14 px-10 rounded-full text-base font-bold text-white no-underline"
+                  style={{ border: "2px solid rgba(255,255,255,0.38)" }}
+                >
+                  <Phone size={16} />
+                  +36 70 673 4444
+                </a>
+              </div>
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
       <section id="folyamat" className="py-28 relative" style={{ background: "hsl(224 18% 4%)" }}>
         <div className="container mx-auto px-6">
           <Reveal>
@@ -1456,52 +1499,6 @@ function Home() {
         </div>
       </section>
 
-      
-      <section
-        className="relative overflow-hidden py-20"
-        style={{ background: "linear-gradient(135deg, hsl(32 92% 52%), hsl(20 88% 36%))" }}
-      >
-        <div
-          className="absolute inset-0 pointer-events-none"
-          style={{ backgroundImage: "repeating-linear-gradient(45deg, transparent, transparent 20px, rgba(0,0,0,0.05) 20px, rgba(0,0,0,0.05) 21px)" }}
-        />
-        <div className="container mx-auto px-6 relative z-10">
-          <div className="flex flex-col lg:flex-row items-center justify-between gap-10">
-            <Reveal>
-              <div>
-                <p className="text-white/60 text-xs font-semibold uppercase tracking-[0.22em] mb-4">
-                  Ingyenes tanácsadás · 24 órán belüli kiszállás
-                </p>
-                <h2 className="text-4xl md:text-[3.5rem] font-black text-white" style={{ lineHeight: 0.9, fontWeight: 900 }}>
-                  Kész a javítás?<br />Mi is azok vagyunk.
-                </h2>
-              </div>
-            </Reveal>
-            <Reveal delay={120}>
-              <div className="flex flex-col sm:flex-row gap-4 shrink-0">
-                <a
-                  href="#kapcsolat"
-                  className="btn-hover inline-flex items-center justify-center gap-2.5 h-14 px-10 rounded-full text-base font-bold no-underline"
-                  style={{ background: "white", color: "hsl(20 88% 34%)", boxShadow: "0 14px 40px rgba(0,0,0,0.22)" }}
-                >
-                  Árajánlatot kérek
-                  <ChevronRight size={16} />
-                </a>
-                <a
-                  href="tel:+36706734444"
-                  className="inline-flex items-center justify-center gap-2.5 h-14 px-10 rounded-full text-base font-bold text-white no-underline"
-                  style={{ border: "2px solid rgba(255,255,255,0.38)" }}
-                >
-                  <Phone size={16} />
-                  +36 70 673 4444
-                </a>
-              </div>
-            </Reveal>
-          </div>
-        </div>
-      </section>
-
-      
       <section id="velemenyek" className="py-28 relative">
         <div className="container mx-auto px-6 relative z-10">
           <Reveal>
