@@ -303,7 +303,7 @@ function CountyMapModal({ county, onClose }: { county: string; onClose: () => vo
     >
       <div
         className="relative w-full max-w-2xl rounded-3xl overflow-hidden"
-        style={{ boxShadow: "0 32px 80px rgba(0,0,0,0.85), 0 0 0 1px rgba(255,255,255,0.07)", animation: "modal-drop 0.45s cubic-bezier(0.22,1,0.36,1) both" }}
+        style={{ boxShadow: "0 32px 80px rgba(0,0,0,0.85), 0 0 0 1px rgba(255,255,255,0.10)", animation: "modal-drop 0.45s cubic-bezier(0.22,1,0.36,1) both" }}
         onClick={(e) => e.stopPropagation()}
       >
         
@@ -354,7 +354,7 @@ function CountyMapModal({ county, onClose }: { county: string; onClose: () => vo
         </div>
 
         
-        <div className="flex gap-3 p-4" style={{ background: "hsl(224 18% 6%)", borderTop: "1px solid rgba(255,255,255,0.06)" }}>
+        <div className="flex gap-3 p-4" style={{ background: "hsl(222 28% 13%)", borderTop: "1px solid rgba(255,255,255,0.12)" }}>
           <a
             href="#kapcsolat"
             onClick={onClose}
@@ -418,7 +418,7 @@ function Home() {
   }, []);
 
   return (
-    <div id="top" className="min-h-screen overflow-x-hidden" style={{ background: "hsl(224 18% 5%)", color: "hsl(40 20% 97%)" }}>
+    <div id="top" className="min-h-screen overflow-x-hidden" style={{ background: "hsl(222 28% 11%)", color: "hsl(40 20% 97%)" }}>
 
       
       <nav className="fixed top-0 left-0 right-0 z-50 flex justify-center pt-4 px-4">
@@ -435,7 +435,7 @@ function Home() {
               WebkitBackdropFilter: "blur(48px) saturate(2.2) brightness(1.05)",
               border: "1px solid rgba(255,255,255,0.075)",
               borderRadius: "999px",
-              boxShadow: "0 8px 40px rgba(0,0,0,0.55), inset 0 1px 0 rgba(255,255,255,0.05)",
+              boxShadow: "0 8px 40px rgba(0,0,0,0.55), inset 0 1px 0 rgba(255,255,255,0.10)",
               transition: "background 0.4s ease",
             }}
           >
@@ -459,9 +459,9 @@ function Home() {
                   key={l.href}
                   href={l.href}
                   className="nav-link text-sm font-medium transition-colors duration-200 no-underline"
-                  style={{ color: "hsl(220 8% 60%)" }}
+                  style={{ color: "hsl(220 20% 70%)" }}
                   onMouseEnter={(e) => (e.currentTarget.style.color = "hsl(40 20% 97%)")}
-                  onMouseLeave={(e) => (e.currentTarget.style.color = "hsl(220 8% 60%)")}
+                  onMouseLeave={(e) => (e.currentTarget.style.color = "hsl(220 20% 70%)")}
                 >
                   {l.label}
                 </a>
@@ -482,7 +482,7 @@ function Home() {
                 onClick={() => setMenuOpen(!menuOpen)}
                 aria-label="Menü"
                 className="md:hidden w-10 h-10 rounded-full flex items-center justify-center transition-colors cursor-pointer"
-                style={{ background: "rgba(255,255,255,0.06)", color: "hsl(220 8% 60%)", border: "none" }}
+                style={{ background: "rgba(255,255,255,0.12)", color: "hsl(220 20% 70%)", border: "none" }}
               >
                 {menuOpen ? <X size={18} /> : <Menu size={18} />}
               </button>
@@ -495,7 +495,7 @@ function Home() {
             style={{
               background: "rgba(10,11,18,0.97)",
               backdropFilter: "blur(48px) saturate(2)",
-              border: "1px solid rgba(255,255,255,0.08)",
+              border: "1px solid rgba(255,255,255,0.11)",
               boxShadow: "0 24px 64px rgba(0,0,0,0.6)",
               maxHeight: menuOpen ? 400 : 0,
               opacity: menuOpen ? 1 : 0,
@@ -508,9 +508,9 @@ function Home() {
               {navLinks.map((l) => (
                 <a key={l.href} href={l.href} onClick={() => setMenuOpen(false)}
                   className="text-left px-4 py-3 rounded-xl text-sm font-medium no-underline block transition-all duration-150"
-                  style={{ color: "hsl(220 8% 60%)" }}
-                  onMouseEnter={(e) => { e.currentTarget.style.background = "rgba(255,255,255,0.05)"; e.currentTarget.style.color = "hsl(40 20% 97%)"; }}
-                  onMouseLeave={(e) => { e.currentTarget.style.background = "transparent"; e.currentTarget.style.color = "hsl(220 8% 60%)"; }}
+                  style={{ color: "hsl(220 20% 70%)" }}
+                  onMouseEnter={(e) => { e.currentTarget.style.background = "rgba(255,255,255,0.10)"; e.currentTarget.style.color = "hsl(40 20% 97%)"; }}
+                  onMouseLeave={(e) => { e.currentTarget.style.background = "transparent"; e.currentTarget.style.color = "hsl(220 20% 70%)"; }}
                 >
                   {l.label}
                 </a>
@@ -569,7 +569,7 @@ function Home() {
                 style={{ opacity: 0.15 }}
               />
               <div className="absolute inset-0" style={{ background: "linear-gradient(to right, rgba(10,11,18,0.97), rgba(10,11,18,0.8) 60%, rgba(10,11,18,0.5))" }} />
-              <div className="absolute inset-0" style={{ background: "linear-gradient(to top, hsl(224 18% 5%), transparent)" }} />
+              <div className="absolute inset-0" style={{ background: "linear-gradient(to top, hsl(222 28% 11%), transparent)" }} />
             </div>
 
             <Reveal>
@@ -603,7 +603,7 @@ function Home() {
             </Reveal>
 
             <Reveal delay={200}>
-              <p className="text-base mb-10 max-w-sm font-light leading-relaxed" style={{ color: "hsl(220 8% 58%)" }}>
+              <p className="text-base mb-10 max-w-sm font-light leading-relaxed" style={{ color: "hsl(220 20% 68%)" }}>
                 Személy- és teherautó, kamion, autóbusz, SUV, pick-up, mezőgazdasági és munkagépek kardántengelyeinek teljes körű felújítása — országos partnerhálózattal és futárszolgálattal.
               </p>
             </Reveal>
@@ -642,16 +642,16 @@ function Home() {
                 className="absolute inset-0 w-full h-full object-cover"
                 style={{ filter: "saturate(0.7) contrast(1.12)", opacity: 0.65 }}
               />
-              <div className="absolute inset-0" style={{ background: "linear-gradient(to right, hsl(224 18% 5%), transparent 38%)" }} />
+              <div className="absolute inset-0" style={{ background: "linear-gradient(to right, hsl(222 28% 11%), transparent 38%)" }} />
               <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(10,11,18,0.7), transparent)" }} />
 
               
               <div className="glass absolute right-8 top-1/3 rounded-2xl px-5 py-4 animate-float">
-                <p className="text-xs" style={{ color: "hsl(220 8% 55%)" }}>Garancia</p>
+                <p className="text-xs" style={{ color: "hsl(220 20% 65%)" }}>Garancia</p>
                 <p className="text-xl font-bold">1/2 év</p>
               </div>
               <div className="glass absolute right-24 bottom-1/4 rounded-2xl px-5 py-4 animate-float" style={{ animationDelay: "-2.5s" }}>
-                <p className="text-xs" style={{ color: "hsl(220 8% 55%)" }}>Javítások</p>
+                <p className="text-xs" style={{ color: "hsl(220 20% 65%)" }}>Javítások</p>
                 <p className="text-xl font-bold">12 000+</p>
               </div>
             </div>
@@ -661,7 +661,7 @@ function Home() {
         
         <div
           className="absolute bottom-0 left-0 right-0 z-20 grid grid-cols-3"
-          style={{ background: "rgba(6,7,12,0.97)", backdropFilter: "blur(24px) saturate(1.8)", borderTop: "1px solid rgba(255,255,255,0.06)" }}
+          style={{ background: "rgba(6,7,12,0.97)", backdropFilter: "blur(24px) saturate(1.8)", borderTop: "1px solid rgba(255,255,255,0.12)" }}
         >
           {[
             { to: 20, suffix: "+", label: "Év tapasztalat" },
@@ -671,12 +671,12 @@ function Home() {
             <div
               key={label}
               className="flex flex-col items-center py-6 px-4"
-              style={{ borderRight: i < 2 ? "1px solid rgba(255,255,255,0.05)" : "none" }}
+              style={{ borderRight: i < 2 ? "1px solid rgba(255,255,255,0.10)" : "none" }}
             >
               <span className="text-3xl md:text-4xl font-black stat-glow" style={{ color: "hsl(32 92% 54%)", fontWeight: 900 }}>
                 <Counter to={to} suffix={suffix} />
               </span>
-              <span className="text-[10px] uppercase tracking-widest mt-1 text-center" style={{ color: "hsl(220 8% 50%)" }}>{label}</span>
+              <span className="text-[10px] uppercase tracking-widest mt-1 text-center" style={{ color: "hsl(220 20% 60%)" }}>{label}</span>
             </div>
           ))}
         </div>
@@ -712,7 +712,7 @@ function Home() {
                 <Chip>Amit csinálunk</Chip>
                 <h2 className="text-5xl md:text-6xl mt-4" style={{ fontWeight: 900 }}>Szolgáltatásaink</h2>
               </div>
-              <p className="text-base leading-relaxed max-w-sm md:text-right" style={{ color: "hsl(220 8% 55%)" }}>
+              <p className="text-base leading-relaxed max-w-sm md:text-right" style={{ color: "hsl(220 20% 65%)" }}>
                 Minden, ami kardán — egy helyen. Javítástól a futárszolgálatig.
               </p>
             </div>
@@ -720,13 +720,13 @@ function Home() {
 
           <div
             className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px"
-            style={{ background: "rgba(255,255,255,0.05)", borderRadius: "20px", overflow: "hidden" }}
+            style={{ background: "rgba(255,255,255,0.10)", borderRadius: "20px", overflow: "hidden" }}
           >
             {services.map((s, i) => (
               <Reveal key={s.title} delay={i * 80}>
                 <div
                   className="group relative flex flex-col cursor-pointer h-full"
-                  style={{ background: "hsl(224 18% 6%)" }}
+                  style={{ background: "hsl(222 28% 13%)" }}
                 >
                   <div className="relative h-52 overflow-hidden">
                     <img
@@ -736,7 +736,7 @@ function Home() {
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.06]"
                       style={{ filter: "saturate(0.7) contrast(1.12) brightness(0.9)" }}
                     />
-                    <div className="absolute inset-0" style={{ background: "linear-gradient(to top, hsl(224 18% 6%), rgba(14,15,24,0.3), transparent)" }} />
+                    <div className="absolute inset-0" style={{ background: "linear-gradient(to top, hsl(222 28% 13%), rgba(30,36,64,0.3), transparent)" }} />
                   </div>
 
                   <div className="flex flex-col flex-1 p-6 pt-5">
@@ -759,7 +759,7 @@ function Home() {
                     >
                       {s.title}
                     </h3>
-                    <p className="text-sm leading-relaxed flex-1" style={{ color: "hsl(220 8% 55%)" }}>{s.desc}</p>
+                    <p className="text-sm leading-relaxed flex-1" style={{ color: "hsl(220 20% 65%)" }}>{s.desc}</p>
                     <div
                       className="mt-5 h-px w-0 group-hover:w-full transition-all duration-500 rounded-full"
                       style={{ background: "linear-gradient(90deg, hsl(32 92% 54%), transparent)" }}
@@ -784,7 +784,7 @@ function Home() {
             <div className="mb-16 text-center">
               <Chip>A folyamat</Chip>
               <h2 className="text-5xl md:text-6xl mt-4" style={{ fontWeight: 900 }}>Egyszerű, gyors, kényelmes.</h2>
-              <p className="mx-auto mt-4 max-w-2xl" style={{ color: "hsl(220 8% 55%)" }}>
+              <p className="mx-auto mt-4 max-w-2xl" style={{ color: "hsl(220 20% 65%)" }}>
                 A hiba észlelésétől a kijavított alkatrész visszaszereléséig komplett megoldást nyújtunk.
               </p>
             </div>
@@ -797,7 +797,7 @@ function Home() {
                 <Reveal key={p.title} delay={i * 100}>
                   <div
                     className="group relative h-full rounded-3xl p-6 text-center project-card-hover"
-                    style={{ background: "hsl(224 18% 6%)", border: "1px solid rgba(255,255,255,0.06)" }}
+                    style={{ background: "hsl(222 28% 13%)", border: "1px solid rgba(255,255,255,0.12)" }}
                   >
                     <div className="relative mx-auto mb-4 w-14 h-14 flex items-center justify-center">
                       <div className="absolute inset-0 rounded-full opacity-50 blur-md" style={{ background: "linear-gradient(135deg, hsl(32 92% 54%), hsl(22 90% 44%))" }} />
@@ -810,7 +810,7 @@ function Home() {
                       0{i + 1}
                     </p>
                     <h3 className="mb-2 text-base font-bold">{p.title}</h3>
-                    <p className="text-sm" style={{ color: "hsl(220 8% 55%)" }}>{p.desc}</p>
+                    <p className="text-sm" style={{ color: "hsl(220 20% 65%)" }}>{p.desc}</p>
                   </div>
                 </Reveal>
               ))}
@@ -820,15 +820,15 @@ function Home() {
       </section>
 
       
-      <section className="py-20 relative" style={{ background: "hsl(224 18% 5%)" }}>
+      <section className="py-20 relative" style={{ background: "hsl(222 28% 11%)" }}>
         <div className="container mx-auto px-6">
           <Reveal>
             <div
               className="rounded-3xl overflow-hidden"
               style={{
-                background: "hsl(224 18% 7%)",
-                border: "1px solid rgba(255,255,255,0.07)",
-                boxShadow: "0 40px 80px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.05)",
+                background: "hsl(222 28% 15%)",
+                border: "1px solid rgba(255,255,255,0.10)",
+                boxShadow: "0 40px 80px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.10)",
               }}
             >
               <div className="grid lg:grid-cols-[1fr_1.6fr]">
@@ -877,9 +877,9 @@ function Home() {
                           type={field.type}
                           placeholder={field.placeholder}
                           className="w-full rounded-xl px-4 py-3 text-sm outline-none transition-all"
-                          style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.08)", color: "hsl(40 20% 97%)" }}
-                          onFocus={(e) => { e.currentTarget.style.borderColor = "rgba(249,115,22,0.5)"; e.currentTarget.style.background = "rgba(255,255,255,0.07)"; }}
-                          onBlur={(e) => { e.currentTarget.style.borderColor = "rgba(255,255,255,0.08)"; e.currentTarget.style.background = "rgba(255,255,255,0.05)"; }}
+                          style={{ background: "rgba(255,255,255,0.10)", border: "1px solid rgba(255,255,255,0.11)", color: "hsl(40 20% 97%)" }}
+                          onFocus={(e) => { e.currentTarget.style.borderColor = "rgba(249,115,22,0.5)"; e.currentTarget.style.background = "rgba(255,255,255,0.10)"; }}
+                          onBlur={(e) => { e.currentTarget.style.borderColor = "rgba(255,255,255,0.11)"; e.currentTarget.style.background = "rgba(255,255,255,0.10)"; }}
                         />
                       </div>
                     ))}
@@ -890,9 +890,9 @@ function Home() {
                       rows={3}
                       placeholder="Röviden írja le a hibát vagy kérdését..."
                       className="w-full resize-none rounded-xl px-4 py-3 text-sm outline-none transition-all"
-                      style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.08)", color: "hsl(40 20% 97%)" }}
-                      onFocus={(e) => { e.currentTarget.style.borderColor = "rgba(249,115,22,0.5)"; e.currentTarget.style.background = "rgba(255,255,255,0.07)"; }}
-                      onBlur={(e) => { e.currentTarget.style.borderColor = "rgba(255,255,255,0.08)"; e.currentTarget.style.background = "rgba(255,255,255,0.05)"; }}
+                      style={{ background: "rgba(255,255,255,0.10)", border: "1px solid rgba(255,255,255,0.11)", color: "hsl(40 20% 97%)" }}
+                      onFocus={(e) => { e.currentTarget.style.borderColor = "rgba(249,115,22,0.5)"; e.currentTarget.style.background = "rgba(255,255,255,0.10)"; }}
+                      onBlur={(e) => { e.currentTarget.style.borderColor = "rgba(255,255,255,0.11)"; e.currentTarget.style.background = "rgba(255,255,255,0.10)"; }}
                     />
                   </div>
                   <button
@@ -938,11 +938,11 @@ function Home() {
                   </div>
                   <div>
                     <span className="text-sm font-bold">5.0</span>
-                    <span className="text-xs ml-1.5" style={{ color: "hsl(220 8% 52%)" }}>Google értékelés · 12 000+ ügyfél</span>
+                    <span className="text-xs ml-1.5" style={{ color: "hsl(220 20% 62%)" }}>Google értékelés · 12 000+ ügyfél</span>
                   </div>
                 </div>
 
-                <p className="leading-relaxed text-[15px] max-w-sm mb-3" style={{ color: "hsl(220 8% 60%)" }}>
+                <p className="leading-relaxed text-[15px] max-w-sm mb-3" style={{ color: "hsl(220 20% 70%)" }}>
                   20 év tapasztalat, modern műhely, eredeti alkatrészek. Nem fogadunk el silány munkát — ezért áll mögöttünk 12 000+ elégedett ügyfél.
                 </p>
                 <p className="text-sm font-semibold mb-8" style={{ color: "hsl(32 92% 62%)" }}>
@@ -974,8 +974,8 @@ function Home() {
                   <div
                     className="group relative rounded-2xl p-5 overflow-hidden cursor-default h-full"
                     style={{
-                      background: "hsl(224 18% 7%)",
-                      border: "1px solid rgba(255,255,255,0.06)",
+                      background: "hsl(222 28% 15%)",
+                      border: "1px solid rgba(255,255,255,0.12)",
                       transition: "transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease",
                     }}
                     onMouseEnter={(e) => {
@@ -988,7 +988,7 @@ function Home() {
                       const el = e.currentTarget;
                       el.style.transform = "translateY(0)";
                       el.style.boxShadow = "none";
-                      el.style.borderColor = "rgba(255,255,255,0.06)";
+                      el.style.borderColor = "rgba(255,255,255,0.12)";
                     }}
                   >
                     
@@ -1007,13 +1007,13 @@ function Home() {
                       </div>
                       <div className="text-right">
                         <div className="text-xl font-black" style={{ color: "hsl(32 92% 62%)", fontWeight: 900, lineHeight: 1 }}>{f.stat}</div>
-                        <div className="text-[9px] uppercase tracking-[0.14em] mt-0.5" style={{ color: "hsl(220 8% 42%)" }}>{f.statLabel}</div>
+                        <div className="text-[9px] uppercase tracking-[0.14em] mt-0.5" style={{ color: "hsl(220 20% 55%)" }}>{f.statLabel}</div>
                       </div>
                     </div>
 
                     <h3 className="font-bold text-sm mb-0.5 transition-colors duration-200 group-hover:text-[hsl(32_92%_60%)]">{f.t}</h3>
                     <p className="text-xs font-semibold mb-2" style={{ color: "hsl(32 92% 56%)" }}>{f.sub}</p>
-                    <p className="text-xs leading-relaxed" style={{ color: "hsl(220 8% 52%)" }}>{f.d}</p>
+                    <p className="text-xs leading-relaxed" style={{ color: "hsl(220 20% 62%)" }}>{f.d}</p>
 
                     
                     <div className="absolute bottom-0 left-0 h-[2px] w-0 group-hover:w-full transition-all duration-500"
@@ -1051,7 +1051,7 @@ function Home() {
                 <a
                   href="#kapcsolat"
                   className={`group relative rounded-3xl overflow-hidden cursor-pointer project-card-hover no-underline block h-full ${i === 0 ? "md:col-span-2" : i === 3 ? "md:col-span-2" : ""}`}
-                  style={{ border: "1px solid rgba(255,255,255,0.06)" }}
+                  style={{ border: "1px solid rgba(255,255,255,0.12)" }}
                 >
                   <img
                     src={c.img}
@@ -1091,7 +1091,7 @@ function Home() {
               <h2 className="text-4xl md:text-5xl mt-4" style={{ fontWeight: 900 }}>
                 További <span style={{ color: "hsl(32 92% 54%)" }}>javítási</span> szolgáltatásaink
               </h2>
-              <p className="mt-4 max-w-xl mx-auto text-base leading-relaxed" style={{ color: "hsl(220 8% 55%)" }}>
+              <p className="mt-4 max-w-xl mx-auto text-base leading-relaxed" style={{ color: "hsl(220 20% 65%)" }}>
                 Nem csak kardán — gömbfej, szilent, turbó, hidraulika és féltengely javítással is foglalkozunk.
               </p>
             </div>
@@ -1105,8 +1105,8 @@ function Home() {
                   href="#kapcsolat"
                   className="group relative flex flex-col items-center text-center rounded-2xl p-8 no-underline overflow-hidden"
                   style={{
-                    background: "linear-gradient(160deg, hsl(224 20% 9%), hsl(224 18% 6%))",
-                    border: "1px solid rgba(255,255,255,0.08)",
+                    background: "linear-gradient(160deg, hsl(222 28% 18%), hsl(222 28% 13%))",
+                    border: "1px solid rgba(255,255,255,0.11)",
                     transition: "border-color 0.25s ease, transform 0.2s ease, box-shadow 0.25s ease",
                   }}
                   onMouseEnter={(e) => {
@@ -1115,7 +1115,7 @@ function Home() {
                     e.currentTarget.style.boxShadow = "0 20px 40px rgba(249,115,22,0.12)";
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.borderColor = "rgba(255,255,255,0.08)";
+                    e.currentTarget.style.borderColor = "rgba(255,255,255,0.11)";
                     e.currentTarget.style.transform = "translateY(0)";
                     e.currentTarget.style.boxShadow = "none";
                   }}
@@ -1132,8 +1132,8 @@ function Home() {
                     <s.icon size={32} style={{ color: "hsl(32 92% 58%)" }} strokeWidth={1.5} />
                   </div>
                   <p className="text-sm font-black uppercase tracking-[0.18em] mb-2" style={{ color: "hsl(32 92% 62%)" }}>{s.title}</p>
-                  <p className="text-xs font-semibold uppercase tracking-widest mb-3" style={{ color: "hsl(220 8% 45%)" }}>{s.sub}</p>
-                  <p className="text-xs leading-relaxed" style={{ color: "hsl(220 8% 55%)" }}>{s.desc}</p>
+                  <p className="text-xs font-semibold uppercase tracking-widest mb-3" style={{ color: "hsl(220 20% 57%)" }}>{s.sub}</p>
+                  <p className="text-xs leading-relaxed" style={{ color: "hsl(220 20% 65%)" }}>{s.desc}</p>
 
                   
                   <div className="absolute bottom-0 left-0 h-[3px] w-0 group-hover:w-full transition-all duration-500"
@@ -1148,7 +1148,7 @@ function Home() {
             <div>
               <div className="flex items-center gap-4 mb-10 justify-center">
                 <div className="h-px flex-1 max-w-[120px]" style={{ background: "linear-gradient(to right, transparent, rgba(255,255,255,0.1))" }} />
-                <p className="text-[11px] font-bold uppercase tracking-[0.28em]" style={{ color: "hsl(220 8% 45%)" }}>
+                <p className="text-[11px] font-bold uppercase tracking-[0.28em]" style={{ color: "hsl(220 20% 57%)" }}>
                   Kiemelt partnereink
                 </p>
                 <div className="h-px flex-1 max-w-[120px]" style={{ background: "linear-gradient(to left, transparent, rgba(255,255,255,0.1))" }} />
@@ -1159,8 +1159,8 @@ function Home() {
                     key={p.name}
                     className="flex items-center gap-4 px-6 py-4 rounded-2xl transition-all duration-200 cursor-default"
                     style={{
-                      background: "hsl(224 18% 8%)",
-                      border: "1px solid rgba(255,255,255,0.09)",
+                      background: "hsl(222 28% 17%)",
+                      border: "1px solid rgba(255,255,255,0.12)",
                       transition: "border-color 0.2s, transform 0.2s, box-shadow 0.2s",
                     }}
                     onMouseEnter={(e) => {
@@ -1169,7 +1169,7 @@ function Home() {
                       e.currentTarget.style.boxShadow = "0 8px 24px rgba(0,0,0,0.3)";
                     }}
                     onMouseLeave={(e) => {
-                      e.currentTarget.style.borderColor = "rgba(255,255,255,0.09)";
+                      e.currentTarget.style.borderColor = "rgba(255,255,255,0.12)";
                       e.currentTarget.style.transform = "translateY(0)";
                       e.currentTarget.style.boxShadow = "none";
                     }}
@@ -1180,7 +1180,7 @@ function Home() {
                     >
                       {p.abbr.slice(0, 2)}
                     </div>
-                    <span className="text-base font-bold" style={{ color: "hsl(220 8% 80%)" }}>{p.name}</span>
+                    <span className="text-base font-bold" style={{ color: "hsl(220 20% 85%)" }}>{p.name}</span>
                   </div>
                 ))}
               </div>
@@ -1199,7 +1199,7 @@ function Home() {
               <div>
                 <Chip>Elvégzett munkák</Chip>
                 <h2 className="text-5xl md:text-6xl mt-4" style={{ fontWeight: 900 }}>12 000+ sikeres javítás.</h2>
-                <p className="mt-4 max-w-xl text-base leading-relaxed" style={{ color: "hsl(220 8% 55%)" }}>
+                <p className="mt-4 max-w-xl text-base leading-relaxed" style={{ color: "hsl(220 20% 65%)" }}>
                   Kattintson bármelyik sorra a részletekért.
                 </p>
               </div>
@@ -1218,10 +1218,10 @@ function Home() {
                   onClick={() => setGalleryFilter(f.id)}
                   className="px-5 py-2 rounded-full text-sm font-semibold cursor-pointer transition-all duration-200"
                   style={{
-                    background: galleryFilter === f.id ? "hsl(32 92% 54%)" : "rgba(255,255,255,0.06)",
-                    color: galleryFilter === f.id ? "white" : "hsl(220 8% 60%)",
+                    background: galleryFilter === f.id ? "hsl(32 92% 54%)" : "rgba(255,255,255,0.12)",
+                    color: galleryFilter === f.id ? "white" : "hsl(220 20% 70%)",
                     boxShadow: galleryFilter === f.id ? "0 0 24px rgba(249,115,22,0.35)" : "none",
-                    border: "1px solid " + (galleryFilter === f.id ? "transparent" : "rgba(255,255,255,0.08)"),
+                    border: "1px solid " + (galleryFilter === f.id ? "transparent" : "rgba(255,255,255,0.11)"),
                   }}
                 >
                   {f.label}
@@ -1238,7 +1238,7 @@ function Home() {
                 <div
                   key={g.tag + g.vehicle}
                   className="gallery-card-in group relative rounded-2xl overflow-hidden cursor-pointer"
-                  style={{ border: "1px solid rgba(255,255,255,0.07)", animationDelay: `${i * 60}ms` }}
+                  style={{ border: "1px solid rgba(255,255,255,0.10)", animationDelay: `${i * 60}ms` }}
                   onClick={() => setLightboxItem(g)}
                 >
                   <div className="grid md:grid-cols-[5fr_7fr]" style={{ minHeight: 200 }}>
@@ -1246,7 +1246,7 @@ function Home() {
                     
                     <div
                       className="relative flex flex-col justify-between p-6"
-                      style={{ background: "hsl(224 18% 7%)", borderRight: "1px solid rgba(255,255,255,0.04)" }}
+                      style={{ background: "hsl(222 28% 15%)", borderRight: "1px solid rgba(255,255,255,0.12)" }}
                     >
                       
                       <div
@@ -1271,7 +1271,7 @@ function Home() {
 
                       <div className="flex items-center gap-3 mt-5">
                         <div className="w-5 h-[2px] rounded-full shrink-0" style={{ background: "hsl(32 92% 54%)" }} />
-                        <span className="flex items-center gap-1.5 text-xs" style={{ color: "hsl(220 8% 50%)" }}>
+                        <span className="flex items-center gap-1.5 text-xs" style={{ color: "hsl(220 20% 60%)" }}>
                           <Clock size={10} /> {g.duration}
                         </span>
                         <span
@@ -1295,7 +1295,7 @@ function Home() {
                       
                       <div
                         className="absolute inset-0 hidden md:block"
-                        style={{ background: "linear-gradient(to right, hsl(224 18% 7%) 0%, transparent 22%)" }}
+                        style={{ background: "linear-gradient(to right, hsl(222 28% 15%) 0%, transparent 22%)" }}
                       />
                     </div>
 
@@ -1319,7 +1319,7 @@ function Home() {
             <div className="mb-16 text-center">
               <Chip>A csapat</Chip>
               <h2 className="text-5xl md:text-6xl mt-4" style={{ fontWeight: 900 }}>Szakértőnk várja hívását.</h2>
-              <p className="mx-auto mt-4 max-w-2xl" style={{ color: "hsl(220 8% 55%)" }}>
+              <p className="mx-auto mt-4 max-w-2xl" style={{ color: "hsl(220 20% 65%)" }}>
                 Ingyenes tanácsadás telefonon. Gyors árajánlat, rövid javítási idő.
               </p>
             </div>
@@ -1330,7 +1330,7 @@ function Home() {
               <Reveal key={m.name} delay={i * 100}>
                 <div
                   className="group overflow-hidden rounded-3xl project-card-hover"
-                  style={{ background: "hsl(224 18% 7%)", border: "1px solid rgba(255,255,255,0.06)" }}
+                  style={{ background: "hsl(222 28% 15%)", border: "1px solid rgba(255,255,255,0.12)" }}
                 >
                   <div className="relative aspect-square overflow-hidden">
                     <img src={m.img} alt={m.name} className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
@@ -1342,9 +1342,9 @@ function Home() {
                       {m.role}
                     </div>
                   </div>
-                  <div className="p-6" style={{ borderTop: "1px solid rgba(255,255,255,0.05)" }}>
+                  <div className="p-6" style={{ borderTop: "1px solid rgba(255,255,255,0.10)" }}>
                     <h3 className="text-lg font-bold">{m.name}</h3>
-                    <p className="text-sm italic mt-2" style={{ color: "hsl(220 8% 60%)" }}>"{m.quote}"</p>
+                    <p className="text-sm italic mt-2" style={{ color: "hsl(220 20% 70%)" }}>"{m.quote}"</p>
                   </div>
                 </div>
               </Reveal>
@@ -1366,7 +1366,7 @@ function Home() {
                   Bárhová megyünk<br />az országban.
                 </h2>
                 <div className="mb-6 h-[2px] w-12 rounded-full" style={{ background: "linear-gradient(90deg, hsl(32 92% 54%), transparent)" }} />
-                <p className="leading-relaxed text-[15px] max-w-sm mb-10" style={{ color: "hsl(220 8% 55%)" }}>
+                <p className="leading-relaxed text-[15px] max-w-sm mb-10" style={{ color: "hsl(220 20% 65%)" }}>
                   Országos kiszerelő partnerhálózatunkkal és saját futárszolgálatunkkal Magyarország minden pontjáról átvesszük az alkatrészt — akár 24 órán belül.
                 </p>
                 <div className="grid grid-cols-2 gap-3">
@@ -1379,7 +1379,7 @@ function Home() {
                     <div key={b.t} className="rounded-2xl p-4" style={{ background: "rgba(249,115,22,0.06)", border: "1px solid rgba(249,115,22,0.12)" }}>
                       <b.icon size={16} style={{ color: "hsl(32 92% 54%)", marginBottom: 6 }} />
                       <p className="text-sm font-semibold">{b.t}</p>
-                      <p className="text-[11px] mt-0.5" style={{ color: "hsl(220 8% 52%)" }}>{b.d}</p>
+                      <p className="text-[11px] mt-0.5" style={{ color: "hsl(220 20% 62%)" }}>{b.d}</p>
                     </div>
                   ))}
                 </div>
@@ -1392,22 +1392,22 @@ function Home() {
                 <div className="absolute -inset-10 rounded-full opacity-[0.12] blur-[80px] pointer-events-none"
                   style={{ background: "radial-gradient(circle, hsl(32 92% 54%), transparent 60%)" }} />
 
-                <p className="text-xs font-semibold uppercase tracking-[0.18em] mb-4" style={{ color: "hsl(220 8% 45%)" }}>
+                <p className="text-xs font-semibold uppercase tracking-[0.18em] mb-4" style={{ color: "hsl(220 20% 57%)" }}>
                   Lefedett megyék — mind a 20
                 </p>
 
                 
                 <div className="relative mb-4">
-                  <Search size={13} className="absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none" style={{ color: "hsl(220 8% 45%)" }} />
+                  <Search size={13} className="absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none" style={{ color: "hsl(220 20% 57%)" }} />
                   <input
                     type="text"
                     placeholder="Keresse meg a megyéjét..."
                     value={countySearch}
                     onChange={(e) => { setCountySearch(e.target.value); setSelectedCounty(null); }}
                     className="w-full rounded-xl pl-9 pr-4 py-2.5 text-sm outline-none transition-all"
-                    style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", color: "hsl(40 20% 97%)" }}
+                    style={{ background: "rgba(255,255,255,0.12)", border: "1px solid rgba(255,255,255,0.11)", color: "hsl(40 20% 97%)" }}
                     onFocus={(e) => { e.currentTarget.style.borderColor = "rgba(249,115,22,0.4)"; }}
-                    onBlur={(e) => { e.currentTarget.style.borderColor = "rgba(255,255,255,0.08)"; }}
+                    onBlur={(e) => { e.currentTarget.style.borderColor = "rgba(255,255,255,0.11)"; }}
                   />
                 </div>
 
@@ -1424,9 +1424,9 @@ function Home() {
                         onClick={() => setSelectedCounty(c)}
                         className="rounded-xl px-3 py-2.5 text-center text-xs font-medium transition-all duration-200 cursor-pointer"
                         style={{
-                          background: isSelected ? "rgba(249,115,22,0.22)" : isKiemelt ? "rgba(249,115,22,0.1)" : "rgba(255,255,255,0.04)",
-                          border: `1px solid ${isSelected ? "rgba(249,115,22,0.55)" : isKiemelt ? "rgba(249,115,22,0.28)" : "rgba(255,255,255,0.06)"}`,
-                          color: isSelected ? "hsl(32 92% 72%)" : isKiemelt ? "hsl(32 92% 62%)" : "hsl(220 8% 60%)",
+                          background: isSelected ? "rgba(249,115,22,0.22)" : isKiemelt ? "rgba(249,115,22,0.1)" : "rgba(255,255,255,0.12)",
+                          border: `1px solid ${isSelected ? "rgba(249,115,22,0.55)" : isKiemelt ? "rgba(249,115,22,0.28)" : "rgba(255,255,255,0.12)"}`,
+                          color: isSelected ? "hsl(32 92% 72%)" : isKiemelt ? "hsl(32 92% 62%)" : "hsl(220 20% 70%)",
                           opacity: isFiltered ? 0.18 : 1,
                           transform: isSelected ? "scale(1.04)" : "scale(1)",
                           boxShadow: isSelected ? "0 0 18px rgba(249,115,22,0.22)" : "none",
@@ -1439,13 +1439,13 @@ function Home() {
                 </div>
 
                 
-                <div className="mt-5 flex flex-wrap items-center gap-x-5 gap-y-2 text-xs" style={{ color: "hsl(220 8% 45%)" }}>
+                <div className="mt-5 flex flex-wrap items-center gap-x-5 gap-y-2 text-xs" style={{ color: "hsl(220 20% 57%)" }}>
                   <span className="flex items-center gap-1.5">
                     <span className="w-3 h-3 rounded-sm inline-block" style={{ background: "rgba(249,115,22,0.5)", border: "1px solid rgba(249,115,22,0.5)" }} />
                     Kiemelt partnerhálózat
                   </span>
                   <span className="flex items-center gap-1.5">
-                    <span className="w-3 h-3 rounded-sm inline-block" style={{ background: "rgba(255,255,255,0.08)", border: "1px solid rgba(255,255,255,0.12)" }} />
+                    <span className="w-3 h-3 rounded-sm inline-block" style={{ background: "rgba(255,255,255,0.11)", border: "1px solid rgba(255,255,255,0.12)" }} />
                     Aktív lefedettség
                   </span>
                   <span style={{ color: "hsl(220 8% 35%)" }}>· Kattintson egy megyére a részletekért</span>
@@ -1531,7 +1531,7 @@ function Home() {
                   <p className="text-[15px] leading-relaxed flex-grow mb-8" style={{ color: "rgba(250,244,230,0.8)" }}>
                     "{t.text}"
                   </p>
-                  <div className="flex items-center gap-3 pt-6" style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}>
+                  <div className="flex items-center gap-3 pt-6" style={{ borderTop: "1px solid rgba(255,255,255,0.12)" }}>
                     <div
                       className="w-9 h-9 rounded-full flex items-center justify-center text-[12px] font-bold text-white shrink-0"
                       style={{ background: "linear-gradient(135deg, hsl(32 92% 54%), hsl(22 85% 44%))" }}
@@ -1566,8 +1566,8 @@ function Home() {
                 <div
                   className="rounded-3xl overflow-hidden"
                   style={{
-                    background: "hsl(224 18% 7%)",
-                    border: `1px solid ${openFaq === i ? "rgba(249,115,22,0.2)" : "rgba(255,255,255,0.06)"}`,
+                    background: "hsl(222 28% 15%)",
+                    border: `1px solid ${openFaq === i ? "rgba(249,115,22,0.2)" : "rgba(255,255,255,0.12)"}`,
                     transition: "border-color 0.25s ease",
                   }}
                 >
@@ -1583,7 +1583,7 @@ function Home() {
                     <ArrowRight
                       size={16}
                       style={{
-                        color: openFaq === i ? "hsl(32 92% 54%)" : "hsl(220 8% 50%)",
+                        color: openFaq === i ? "hsl(32 92% 54%)" : "hsl(220 20% 60%)",
                         flexShrink: 0,
                         transform: openFaq === i ? "rotate(90deg)" : "rotate(0deg)",
                         transition: "transform 0.3s ease, color 0.2s ease",
@@ -1597,7 +1597,7 @@ function Home() {
                       transition: "max-height 0.35s cubic-bezier(0.22, 1, 0.36, 1)",
                     }}
                   >
-                    <p className="px-5 pb-5 pl-[3.25rem] text-sm leading-relaxed" style={{ color: "hsl(220 8% 55%)" }}>{f.a}</p>
+                    <p className="px-5 pb-5 pl-[3.25rem] text-sm leading-relaxed" style={{ color: "hsl(220 20% 65%)" }}>{f.a}</p>
                   </div>
                 </div>
               </Reveal>
@@ -1623,7 +1623,7 @@ function Home() {
                   <span className="w-2 h-2 rounded-full shrink-0" style={{ background: "hsl(32 92% 54%)", animation: "pulse-glow 2s ease-in-out infinite" }} />
                   <p className="text-sm font-semibold" style={{ color: "hsl(32 92% 62%)" }}>Ma még tudunk időpontot adni — ne halogassa!</p>
                 </div>
-                <p className="mb-12 max-w-sm leading-relaxed text-[15px]" style={{ color: "hsl(220 8% 55%)" }}>
+                <p className="mb-12 max-w-sm leading-relaxed text-[15px]" style={{ color: "hsl(220 20% 65%)" }}>
                   Töltse ki az űrlapot vagy hívjon minket — 24 órán belül felvesszük a kapcsolatot, és megszervezzük az oda-vissza szállítást.
                 </p>
                 <div className="space-y-4">
@@ -1644,7 +1644,7 @@ function Home() {
                         <Icon size={18} strokeWidth={1.5} />
                       </div>
                       <div>
-                        <div className="text-[10px] uppercase tracking-widest font-semibold mb-0.5" style={{ color: "hsl(220 8% 50%)" }}>{label}</div>
+                        <div className="text-[10px] uppercase tracking-widest font-semibold mb-0.5" style={{ color: "hsl(220 20% 60%)" }}>{label}</div>
                         <div className="font-semibold text-sm">{value}</div>
                       </div>
                     </a>
@@ -1661,7 +1661,7 @@ function Home() {
                     <div key={b.t} className="rounded-2xl px-3 py-3 text-center" style={{ background: "rgba(249,115,22,0.07)", border: "1px solid rgba(249,115,22,0.15)" }}>
                       <b.icon size={18} style={{ color: "hsl(32 92% 54%)", margin: "0 auto 6px" }} />
                       <p className="text-xs font-semibold">{b.t}</p>
-                      <p className="text-[10px] mt-0.5" style={{ color: "hsl(220 8% 52%)" }}>{b.d}</p>
+                      <p className="text-[10px] mt-0.5" style={{ color: "hsl(220 20% 62%)" }}>{b.d}</p>
                     </div>
                   ))}
                 </div>
@@ -1672,7 +1672,7 @@ function Home() {
             <Reveal delay={120}>
               <div
                 className="glass-strong rounded-3xl p-10"
-                style={{ boxShadow: "0 40px 80px -24px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.06)" }}
+                style={{ boxShadow: "0 40px 80px -24px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.12)" }}
               >
                 {formState === "success" ? (
                   <div className="flex flex-col items-center justify-center py-12 text-center" style={{ animation: "card-in 0.4s ease both" }}>
@@ -1683,13 +1683,13 @@ function Home() {
                       <CheckCircle2 size={30} style={{ color: "hsl(32 92% 54%)" }} />
                     </div>
                     <h3 className="text-xl font-bold mb-2">Köszönjük!</h3>
-                    <p className="text-sm max-w-xs" style={{ color: "hsl(220 8% 55%)" }}>
+                    <p className="text-sm max-w-xs" style={{ color: "hsl(220 20% 65%)" }}>
                       Hamarosan visszahívjuk — általában 24 órán belül.
                     </p>
                     <button
                       onClick={() => setFormState("idle")}
                       className="mt-8 text-xs cursor-pointer underline"
-                      style={{ background: "none", border: "none", color: "hsl(220 8% 50%)" }}
+                      style={{ background: "none", border: "none", color: "hsl(220 20% 60%)" }}
                     >
                       Új üzenet küldése
                     </button>
@@ -1697,7 +1697,7 @@ function Home() {
                 ) : (
                   <>
                     <h3 className="text-lg font-bold mb-1">Kérjen ingyenes visszahívást</h3>
-                    <p className="text-sm mb-6" style={{ color: "hsl(220 8% 55%)" }}>24 órán belül felvesszük Önnel a kapcsolatot.</p>
+                    <p className="text-sm mb-6" style={{ color: "hsl(220 20% 65%)" }}>24 órán belül felvesszük Önnel a kapcsolatot.</p>
 
                     <form
                       className="space-y-5"
@@ -1708,49 +1708,49 @@ function Home() {
                       }}
                     >
                       <div>
-                        <label className="text-[10px] font-semibold uppercase tracking-widest mb-2 block" style={{ color: "hsl(220 8% 50%)" }}>Név</label>
+                        <label className="text-[10px] font-semibold uppercase tracking-widest mb-2 block" style={{ color: "hsl(220 20% 60%)" }}>Név</label>
                         <input
                           type="text"
                           placeholder="Adja meg nevét"
                           className="w-full rounded-xl px-4 py-3 text-sm outline-none transition-all"
-                          style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.09)", color: "hsl(40 20% 97%)" }}
-                          onFocus={(e) => { e.currentTarget.style.borderColor = "rgba(249,115,22,0.5)"; e.currentTarget.style.background = "rgba(255,255,255,0.07)"; }}
-                          onBlur={(e) => { e.currentTarget.style.borderColor = "rgba(255,255,255,0.09)"; e.currentTarget.style.background = "rgba(255,255,255,0.05)"; }}
+                          style={{ background: "rgba(255,255,255,0.10)", border: "1px solid rgba(255,255,255,0.12)", color: "hsl(40 20% 97%)" }}
+                          onFocus={(e) => { e.currentTarget.style.borderColor = "rgba(249,115,22,0.5)"; e.currentTarget.style.background = "rgba(255,255,255,0.10)"; }}
+                          onBlur={(e) => { e.currentTarget.style.borderColor = "rgba(255,255,255,0.12)"; e.currentTarget.style.background = "rgba(255,255,255,0.10)"; }}
                         />
                       </div>
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <div>
-                          <label className="text-[10px] font-semibold uppercase tracking-widest mb-2 block" style={{ color: "hsl(220 8% 50%)" }}>Telefonszám</label>
+                          <label className="text-[10px] font-semibold uppercase tracking-widest mb-2 block" style={{ color: "hsl(220 20% 60%)" }}>Telefonszám</label>
                           <input
                             type="tel"
                             placeholder="+36 70 000 0000"
                             className="w-full rounded-xl px-4 py-3 text-sm outline-none transition-all"
-                            style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.09)", color: "hsl(40 20% 97%)" }}
-                            onFocus={(e) => { e.currentTarget.style.borderColor = "rgba(249,115,22,0.5)"; e.currentTarget.style.background = "rgba(255,255,255,0.07)"; }}
-                            onBlur={(e) => { e.currentTarget.style.borderColor = "rgba(255,255,255,0.09)"; e.currentTarget.style.background = "rgba(255,255,255,0.05)"; }}
+                            style={{ background: "rgba(255,255,255,0.10)", border: "1px solid rgba(255,255,255,0.12)", color: "hsl(40 20% 97%)" }}
+                            onFocus={(e) => { e.currentTarget.style.borderColor = "rgba(249,115,22,0.5)"; e.currentTarget.style.background = "rgba(255,255,255,0.10)"; }}
+                            onBlur={(e) => { e.currentTarget.style.borderColor = "rgba(255,255,255,0.12)"; e.currentTarget.style.background = "rgba(255,255,255,0.10)"; }}
                           />
                         </div>
                         <div>
-                          <label className="text-[10px] font-semibold uppercase tracking-widest mb-2 block" style={{ color: "hsl(220 8% 50%)" }}>Email (opcionális)</label>
+                          <label className="text-[10px] font-semibold uppercase tracking-widest mb-2 block" style={{ color: "hsl(220 20% 60%)" }}>Email (opcionális)</label>
                           <input
                             type="email"
                             placeholder="pelda@email.hu"
                             className="w-full rounded-xl px-4 py-3 text-sm outline-none transition-all"
-                            style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.09)", color: "hsl(40 20% 97%)" }}
-                            onFocus={(e) => { e.currentTarget.style.borderColor = "rgba(249,115,22,0.5)"; e.currentTarget.style.background = "rgba(255,255,255,0.07)"; }}
-                            onBlur={(e) => { e.currentTarget.style.borderColor = "rgba(255,255,255,0.09)"; e.currentTarget.style.background = "rgba(255,255,255,0.05)"; }}
+                            style={{ background: "rgba(255,255,255,0.10)", border: "1px solid rgba(255,255,255,0.12)", color: "hsl(40 20% 97%)" }}
+                            onFocus={(e) => { e.currentTarget.style.borderColor = "rgba(249,115,22,0.5)"; e.currentTarget.style.background = "rgba(255,255,255,0.10)"; }}
+                            onBlur={(e) => { e.currentTarget.style.borderColor = "rgba(255,255,255,0.12)"; e.currentTarget.style.background = "rgba(255,255,255,0.10)"; }}
                           />
                         </div>
                       </div>
                       <div>
-                        <label className="text-[10px] font-semibold uppercase tracking-widest mb-2 block" style={{ color: "hsl(220 8% 50%)" }}>Üzenet</label>
+                        <label className="text-[10px] font-semibold uppercase tracking-widest mb-2 block" style={{ color: "hsl(220 20% 60%)" }}>Üzenet</label>
                         <textarea
                           rows={4}
                           placeholder="Röviden írja le a hibát..."
                           className="w-full resize-none rounded-xl px-4 py-3 text-sm outline-none transition-all"
-                          style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.09)", color: "hsl(40 20% 97%)" }}
-                          onFocus={(e) => { e.currentTarget.style.borderColor = "rgba(249,115,22,0.5)"; e.currentTarget.style.background = "rgba(255,255,255,0.07)"; }}
-                          onBlur={(e) => { e.currentTarget.style.borderColor = "rgba(255,255,255,0.09)"; e.currentTarget.style.background = "rgba(255,255,255,0.05)"; }}
+                          style={{ background: "rgba(255,255,255,0.10)", border: "1px solid rgba(255,255,255,0.12)", color: "hsl(40 20% 97%)" }}
+                          onFocus={(e) => { e.currentTarget.style.borderColor = "rgba(249,115,22,0.5)"; e.currentTarget.style.background = "rgba(255,255,255,0.10)"; }}
+                          onBlur={(e) => { e.currentTarget.style.borderColor = "rgba(255,255,255,0.12)"; e.currentTarget.style.background = "rgba(255,255,255,0.10)"; }}
                         />
                       </div>
                       <button
@@ -1801,7 +1801,7 @@ function Home() {
           </div>
 
           
-          <p className="hidden md:block text-xs flex-1" style={{ color: "hsl(220 8% 50%)" }}>
+          <p className="hidden md:block text-xs flex-1" style={{ color: "hsl(220 20% 60%)" }}>
             <span style={{ color: "hsl(32 92% 62%)", fontWeight: 700 }}>⚡ Ma még tudunk időpontot adni</span> — ne halogassa a javítást!
           </p>
 
@@ -1825,7 +1825,7 @@ function Home() {
               onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
               aria-label="Vissza a tetejére"
               className="w-10 h-10 rounded-full flex items-center justify-center cursor-pointer shrink-0"
-              style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.08)", color: "hsl(220 8% 55%)" }}
+              style={{ background: "rgba(255,255,255,0.10)", border: "1px solid rgba(255,255,255,0.11)", color: "hsl(220 20% 65%)" }}
             >
               <ArrowUp size={14} />
             </button>
@@ -1847,7 +1847,7 @@ function Home() {
         >
           <div
             className="relative max-w-2xl w-full rounded-3xl overflow-hidden"
-            style={{ boxShadow: "0 40px 100px rgba(0,0,0,0.8), 0 0 0 1px rgba(255,255,255,0.07)" }}
+            style={{ boxShadow: "0 40px 100px rgba(0,0,0,0.8), 0 0 0 1px rgba(255,255,255,0.10)" }}
             onClick={(e) => e.stopPropagation()}
           >
             <div className="relative" style={{ height: 340 }}>
@@ -1857,7 +1857,7 @@ function Home() {
                 className="absolute inset-0 w-full h-full object-cover"
                 style={{ filter: "saturate(0.85) contrast(1.08)" }}
               />
-              <div className="absolute inset-0" style={{ background: "linear-gradient(to top, hsl(224 18% 7%), transparent 50%)" }} />
+              <div className="absolute inset-0" style={{ background: "linear-gradient(to top, hsl(222 28% 15%), transparent 50%)" }} />
               <button
                 onClick={() => setLightboxItem(null)}
                 className="absolute top-4 right-4 w-9 h-9 rounded-full flex items-center justify-center cursor-pointer transition-colors"
@@ -1871,10 +1871,10 @@ function Home() {
               </div>
             </div>
 
-            <div className="p-7" style={{ background: "hsl(224 18% 7%)" }}>
+            <div className="p-7" style={{ background: "hsl(222 28% 15%)" }}>
               <p className="text-xs font-semibold uppercase tracking-wider mb-1" style={{ color: "hsl(32 92% 60%)" }}>{lightboxItem.vehicle}</p>
               <h3 className="text-2xl font-black mb-5">{lightboxItem.tag}</h3>
-              <div className="flex flex-wrap gap-4 mb-7 text-sm" style={{ color: "hsl(220 8% 60%)" }}>
+              <div className="flex flex-wrap gap-4 mb-7 text-sm" style={{ color: "hsl(220 20% 70%)" }}>
                 <span className="flex items-center gap-1.5"><Clock size={13} /> Javítási idő: <strong className="ml-1" style={{ color: "hsl(40 20% 90%)" }}>{lightboxItem.duration}</strong></span>
                 <span className="flex items-center gap-1.5"><ShieldCheck size={13} /> 1/2 év garancia</span>
                 <span className="flex items-center gap-1.5"><Sparkles size={13} /> Eredeti alkatrészek</span>
@@ -1891,7 +1891,7 @@ function Home() {
                 <button
                   onClick={() => setLightboxItem(null)}
                   className="rounded-full px-6 py-3 text-sm font-semibold cursor-pointer"
-                  style={{ background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.1)", color: "hsl(220 8% 60%)" }}
+                  style={{ background: "rgba(255,255,255,0.12)", border: "1px solid rgba(255,255,255,0.1)", color: "hsl(220 20% 70%)" }}
                 >
                   Bezárás
                 </button>
@@ -1902,7 +1902,7 @@ function Home() {
       )}
 
       
-      <footer className="py-16 relative" style={{ borderTop: "1px solid rgba(255,255,255,0.05)", background: "hsl(224 22% 3%)" }}>
+      <footer className="py-16 relative" style={{ borderTop: "1px solid rgba(255,255,255,0.10)", background: "hsl(224 22% 3%)" }}>
         <div className="container mx-auto px-6">
           <div className="flex flex-col md:flex-row justify-between items-start gap-12 mb-14">
 
@@ -1916,7 +1916,7 @@ function Home() {
                 </div>
                 <span className="text-lg font-bold tracking-widest">kardán<span style={{ color: "hsl(32 92% 54%)" }}>javítás.hu</span></span>
               </div>
-              <p className="text-sm max-w-xs leading-relaxed" style={{ color: "hsl(220 8% 50%)" }}>
+              <p className="text-sm max-w-xs leading-relaxed" style={{ color: "hsl(220 20% 60%)" }}>
                 Kardántengely javítás, felújítás és értékesítés. Országos futárszolgálat.
               </p>
             </div>
@@ -1925,9 +1925,9 @@ function Home() {
               {navLinks.map((l) => (
                 <a key={l.href} href={l.href}
                   className="text-sm no-underline transition-colors"
-                  style={{ color: "hsl(220 8% 50%)" }}
+                  style={{ color: "hsl(220 20% 60%)" }}
                   onMouseEnter={(e) => (e.currentTarget.style.color = "hsl(40 20% 97%)")}
-                  onMouseLeave={(e) => (e.currentTarget.style.color = "hsl(220 8% 50%)")}
+                  onMouseLeave={(e) => (e.currentTarget.style.color = "hsl(220 20% 60%)")}
                 >
                   {l.label}
                 </a>
@@ -1940,7 +1940,7 @@ function Home() {
                 { icon: Phone, val: "+36 20 346 8840", href: "tel:+36203468840" },
                 { icon: Mail, val: "info@syncwell.hu", href: "mailto:info@syncwell.hu" },
               ].map(({ icon: Icon, val, href }) => (
-                <a key={val} href={href} className="flex items-center gap-3 text-sm no-underline" style={{ color: "hsl(220 8% 50%)" }}>
+                <a key={val} href={href} className="flex items-center gap-3 text-sm no-underline" style={{ color: "hsl(220 20% 60%)" }}>
                   <Icon size={13} style={{ color: "hsl(32 92% 54%)", flexShrink: 0 }} />
                   {val}
                 </a>
@@ -1948,7 +1948,7 @@ function Home() {
             </div>
           </div>
 
-          <div style={{ height: "1px", background: "rgba(255,255,255,0.05)", marginBottom: "2rem" }} />
+          <div style={{ height: "1px", background: "rgba(255,255,255,0.10)", marginBottom: "2rem" }} />
 
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-xs" style={{ color: "rgba(255,255,255,0.22)" }}>
             <div>© {new Date().getFullYear()} SyncWell Kreatív Kft. — kardánjavítás.hu</div>
