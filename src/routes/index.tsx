@@ -22,6 +22,11 @@ import {
   X,
   Search,
   ArrowUp,
+  Cog,
+  Flame,
+  CircleDot,
+  Layers,
+  Droplets,
 } from "lucide-react";
 import { Reveal } from "@/components/site/Reveal";
 import { useEffect, useRef, useState, type ReactNode } from "react";
@@ -132,11 +137,11 @@ const whyUs = [
 ];
 
 const additionalServices = [
-  { title: "Féltengely",  sub: "javítás és felújítás" },
-  { title: "Turbó",       sub: "javítás és felújítás" },
-  { title: "Gömbfej",     sub: "javítás és felújítás" },
-  { title: "Szilent",     sub: "javítás és felújítás" },
-  { title: "Hidraulika",  sub: "javítás és gyártás" },
+  { title: "Féltengely",  sub: "javítás és felújítás", icon: Cog,       desc: "Személyautó és teherautó féltengely felújítás, csukló csere" },
+  { title: "Turbó",       sub: "javítás és felújítás", icon: Flame,     desc: "Turbófeltöltő javítás, felülvizsgálat és utángyártás" },
+  { title: "Gömbfej",     sub: "javítás és felújítás", icon: CircleDot, desc: "Futómű gömbfej csere és geometria beállítás" },
+  { title: "Szilent",     sub: "javítás és felújítás", icon: Layers,    desc: "Gumiszilentek, lengéscsillapítók és stabilizátor betétek" },
+  { title: "Hidraulika",  sub: "javítás és gyártás",   icon: Droplets,  desc: "Hidraulika tömlők, hengerek és szivattyúk javítása, gyártása" },
 ];
 
 const partnerLogos = [
@@ -193,8 +198,6 @@ const galleryItems = [
   { tag: "Kardántengely csere", vehicle: "Volvo FH16", category: "kamion", duration: "8 óra", img: "https://kardanjavitas.hu/wp-content/uploads/2024/12/Teherautok_kardanjavitasa_1.jpg" },
   { tag: "Kardántengely hiba — csere", vehicle: "Mezőgazdasági gép", category: "munkagep", duration: "1 nap", img: "https://kardanjavitas.hu/wp-content/uploads/2024/12/kardanjavitas_kardantengely_hiba-1-scaled.jpg" },
 ];
-
-
 
 const counties = [
   "Budapest", "Pest", "Győr-Moson-Sopron", "Vas", "Zala",
@@ -303,7 +306,7 @@ function CountyMapModal({ county, onClose }: { county: string; onClose: () => vo
         style={{ boxShadow: "0 32px 80px rgba(0,0,0,0.85), 0 0 0 1px rgba(255,255,255,0.07)", animation: "modal-drop 0.45s cubic-bezier(0.22,1,0.36,1) both" }}
         onClick={(e) => e.stopPropagation()}
       >
-        {/* Map */}
+        
         <div className="relative" style={{ height: 420 }}>
           {mounted && countyPin && workshopPin && (
             <MapContainer
@@ -326,7 +329,7 @@ function CountyMapModal({ county, onClose }: { county: string; onClose: () => vo
             </MapContainer>
           )}
 
-          {/* Info overlay on top of map */}
+          
           <div
             className="absolute top-0 left-0 right-0 z-[400] p-5"
             style={{ background: "linear-gradient(to bottom, rgba(0,0,0,0.80), transparent)", pointerEvents: "none" }}
@@ -340,7 +343,7 @@ function CountyMapModal({ county, onClose }: { county: string; onClose: () => vo
             </p>
           </div>
 
-          {/* Close button */}
+          
           <button
             onClick={onClose}
             className="absolute top-4 right-4 z-[400] w-10 h-10 rounded-full flex items-center justify-center cursor-pointer"
@@ -350,7 +353,7 @@ function CountyMapModal({ county, onClose }: { county: string; onClose: () => vo
           </button>
         </div>
 
-        {/* Footer */}
+        
         <div className="flex gap-3 p-4" style={{ background: "hsl(224 18% 6%)", borderTop: "1px solid rgba(255,255,255,0.06)" }}>
           <a
             href="#kapcsolat"
@@ -414,11 +417,10 @@ function Home() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-
   return (
     <div id="top" className="min-h-screen overflow-x-hidden" style={{ background: "hsl(224 18% 5%)", color: "hsl(40 20% 97%)" }}>
 
-      {/* ── Navigation ───────────────────────────────────── */}
+      
       <nav className="fixed top-0 left-0 right-0 z-50 flex justify-center pt-4 px-4">
         <div className="w-full max-w-5xl"
           style={{
@@ -437,7 +439,7 @@ function Home() {
               transition: "background 0.4s ease",
             }}
           >
-            {/* Logo */}
+            
             <a href="#top" className="flex items-center gap-2.5 group pl-1 no-underline">
               <div
                 className="w-9 h-9 rounded-full flex items-center justify-center shrink-0 transition-transform duration-300 group-hover:scale-105"
@@ -450,7 +452,7 @@ function Home() {
               </span>
             </a>
 
-            {/* Desktop links */}
+            
             <div className="hidden md:flex items-center gap-6">
               {navLinks.map((l) => (
                 <a
@@ -466,7 +468,7 @@ function Home() {
               ))}
             </div>
 
-            {/* CTA + hamburger */}
+            
             <div className="flex items-center gap-2">
               <a
                 href="tel:+36706734444"
@@ -487,7 +489,7 @@ function Home() {
             </div>
           </div>
 
-          {/* Mobile drawer */}
+          
           <div
             className="rounded-3xl overflow-hidden"
             style={{
@@ -525,11 +527,9 @@ function Home() {
         </div>
       </nav>
 
-      {/* ═══════════════════════════════════════════════════════
-          HERO
-      ════════════════════════════════════════════════════════ */}
+      
       <section id="hero" className="relative min-h-[100dvh] overflow-hidden">
-        {/* Dot grid texture */}
+        
         <div
           className="absolute inset-0 pointer-events-none z-0"
           style={{
@@ -538,29 +538,29 @@ function Home() {
           }}
         />
 
-        {/* Ambient orange blob top-left */}
+        
         <div
           className="absolute -top-32 -left-24 rounded-full pointer-events-none animate-blob"
           style={{ width: 620, height: 620, background: "radial-gradient(circle, rgba(249,115,22,0.16), transparent 70%)", filter: "blur(80px)" }}
         />
-        {/* Ambient indigo blob top-right */}
+        
         <div
           className="absolute -top-16 right-[-80px] rounded-full pointer-events-none"
           style={{ width: 500, height: 500, background: "radial-gradient(circle, rgba(99,102,241,0.1), transparent 70%)", filter: "blur(100px)", animation: "blob 22s ease-in-out infinite reverse" }}
         />
-        {/* Ambient orange blob bottom-center */}
+        
         <div
           className="absolute bottom-[15%] left-[38%] rounded-full pointer-events-none"
           style={{ width: 320, height: 320, background: "radial-gradient(circle, rgba(249,115,22,0.08), transparent 70%)", filter: "blur(60px)", animation: "blob 16s ease-in-out infinite" }}
         />
 
-        {/* Grid: text left / image right */}
+        
         <div className="grid lg:grid-cols-[1fr_0.55fr] min-h-[100dvh]">
 
-          {/* LEFT */}
+          
           <div className="relative flex flex-col justify-center pt-32 pb-36 px-6 md:px-10 lg:px-16 xl:px-24 z-10">
 
-            {/* Mobile bg image */}
+            
             <div className="absolute inset-0 lg:hidden -z-0">
               <img
                 src="https://kardanjavitas.hu/wp-content/uploads/2025/01/Kardantengely_javitas_1920x900px_Slider_jobb.jpg"
@@ -630,7 +630,7 @@ function Home() {
             </Reveal>
           </div>
 
-          {/* RIGHT — diagonal image */}
+          
           <div className="hidden lg:block relative overflow-hidden">
             <div
               className="absolute inset-0"
@@ -645,7 +645,7 @@ function Home() {
               <div className="absolute inset-0" style={{ background: "linear-gradient(to right, hsl(224 18% 5%), transparent 38%)" }} />
               <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(10,11,18,0.7), transparent)" }} />
 
-              {/* Floating stats */}
+              
               <div className="glass absolute right-8 top-1/3 rounded-2xl px-5 py-4 animate-float">
                 <p className="text-xs" style={{ color: "hsl(220 8% 55%)" }}>Garancia</p>
                 <p className="text-xl font-bold">1/2 év</p>
@@ -658,7 +658,7 @@ function Home() {
           </div>
         </div>
 
-        {/* Stats band */}
+        
         <div
           className="absolute bottom-0 left-0 right-0 z-20 grid grid-cols-3"
           style={{ background: "rgba(6,7,12,0.97)", backdropFilter: "blur(24px) saturate(1.8)", borderTop: "1px solid rgba(255,255,255,0.06)" }}
@@ -682,9 +682,7 @@ function Home() {
         </div>
       </section>
 
-      {/* ═══════════════════════════════════════════════════════
-          MARQUEE
-      ════════════════════════════════════════════════════════ */}
+      
       <div
         className="overflow-hidden"
         style={{ background: "hsl(32 92% 54%)", borderTop: "1px solid rgba(0,0,0,0.1)", borderBottom: "1px solid rgba(0,0,0,0.1)" }}
@@ -702,9 +700,7 @@ function Home() {
         </div>
       </div>
 
-      {/* ═══════════════════════════════════════════════════════
-          SERVICES
-      ════════════════════════════════════════════════════════ */}
+      
       <section id="szolgaltatasok" className="py-28 relative">
         <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full opacity-[0.04] blur-[100px] pointer-events-none"
           style={{ background: "radial-gradient(circle, hsl(32 92% 54%), transparent 60%)" }} />
@@ -781,9 +777,7 @@ function Home() {
         </div>
       </section>
 
-      {/* ═══════════════════════════════════════════════════════
-          PROCESS
-      ════════════════════════════════════════════════════════ */}
+      
       <section id="folyamat" className="py-28 relative" style={{ background: "hsl(224 18% 4%)" }}>
         <div className="container mx-auto px-6">
           <Reveal>
@@ -825,9 +819,7 @@ function Home() {
         </div>
       </section>
 
-      {/* ═══════════════════════════════════════════════════════
-          QUICK CALLBACK FORM
-      ════════════════════════════════════════════════════════ */}
+      
       <section className="py-20 relative" style={{ background: "hsl(224 18% 5%)" }}>
         <div className="container mx-auto px-6">
           <Reveal>
@@ -841,7 +833,7 @@ function Home() {
             >
               <div className="grid lg:grid-cols-[1fr_1.6fr]">
 
-                {/* LEFT — headline */}
+                
                 <div
                   className="p-10 flex flex-col justify-center"
                   style={{ background: "linear-gradient(135deg, hsl(32 92% 54%), hsl(20 88% 38%))", position: "relative", overflow: "hidden" }}
@@ -870,7 +862,7 @@ function Home() {
                   </div>
                 </div>
 
-                {/* RIGHT — form fields */}
+                
                 <div className="p-10">
                   <div className="grid sm:grid-cols-2 gap-4 mb-4">
                     {[
@@ -923,14 +915,12 @@ function Home() {
         </div>
       </section>
 
-      {/* ═══════════════════════════════════════════════════════
-          WHY US — sticky left / scrolling right
-      ════════════════════════════════════════════════════════ */}
+      
       <section id="miert-minket" className="py-28 relative">
         <div className="container mx-auto px-6">
           <div className="grid lg:grid-cols-[1fr_1.1fr] gap-16 lg:gap-24 items-start">
 
-            {/* LEFT sticky */}
+            
             <Reveal>
               <div className="lg:sticky lg:top-28">
                 <Chip>Előnyeink</Chip>
@@ -939,7 +929,7 @@ function Home() {
                 </h2>
                 <div className="mb-5 h-[2px] w-12 rounded-full" style={{ background: "linear-gradient(90deg, hsl(32 92% 54%), transparent)" }} />
 
-                {/* Google stars social proof */}
+                
                 <div className="flex items-center gap-3 mb-5 p-3 rounded-2xl" style={{ background: "rgba(249,115,22,0.07)", border: "1px solid rgba(249,115,22,0.18)" }}>
                   <div className="flex gap-0.5">
                     {Array.from({ length: 5 }).map((_, k) => (
@@ -977,7 +967,7 @@ function Home() {
               </div>
             </Reveal>
 
-            {/* RIGHT — interactive cards */}
+            
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {whyUs.map((f, i) => (
                 <Reveal key={f.t} delay={i * 60}>
@@ -1001,13 +991,13 @@ function Home() {
                       el.style.borderColor = "rgba(255,255,255,0.06)";
                     }}
                   >
-                    {/* ghost number */}
+                    
                     <div className="absolute -right-1 -bottom-2 font-black text-[5rem] leading-none select-none pointer-events-none"
                       style={{ color: "rgba(249,115,22,0.05)", fontWeight: 900 }}>
                       {String(i + 1).padStart(2, "0")}
                     </div>
 
-                    {/* icon + stat */}
+                    
                     <div className="flex items-start justify-between mb-4">
                       <div
                         className="w-11 h-11 rounded-xl flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:rotate-6"
@@ -1025,7 +1015,7 @@ function Home() {
                     <p className="text-xs font-semibold mb-2" style={{ color: "hsl(32 92% 56%)" }}>{f.sub}</p>
                     <p className="text-xs leading-relaxed" style={{ color: "hsl(220 8% 52%)" }}>{f.d}</p>
 
-                    {/* bottom reveal bar */}
+                    
                     <div className="absolute bottom-0 left-0 h-[2px] w-0 group-hover:w-full transition-all duration-500"
                       style={{ background: "linear-gradient(90deg, hsl(32 92% 54%), transparent)" }} />
                   </div>
@@ -1036,9 +1026,7 @@ function Home() {
         </div>
       </section>
 
-      {/* ═══════════════════════════════════════════════════════
-          CATEGORIES — bento grid
-      ════════════════════════════════════════════════════════ */}
+      
       <section className="py-28 relative" style={{ background: "hsl(224 18% 4%)" }}>
         <div className="container mx-auto px-6">
           <Reveal>
@@ -1091,9 +1079,7 @@ function Home() {
         </div>
       </section>
 
-      {/* ═══════════════════════════════════════════════════════
-          ADDITIONAL SERVICES
-      ════════════════════════════════════════════════════════ */}
+      
       <section className="py-28 relative">
         <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full opacity-[0.04] blur-[100px] pointer-events-none"
           style={{ background: "radial-gradient(circle, hsl(32 92% 54%), transparent 60%)" }} />
@@ -1111,72 +1097,90 @@ function Home() {
             </div>
           </Reveal>
 
-          {/* Service cards */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 mb-20">
+          
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5 mb-24">
             {additionalServices.map((s, i) => (
               <Reveal key={s.title} delay={i * 70}>
                 <a
                   href="#kapcsolat"
-                  className="group relative flex flex-col items-center text-center rounded-2xl p-6 no-underline overflow-hidden project-card-hover"
+                  className="group relative flex flex-col items-center text-center rounded-2xl p-8 no-underline overflow-hidden"
                   style={{
-                    background: "hsl(224 18% 7%)",
-                    border: "1px solid rgba(255,255,255,0.06)",
-                    transition: "border-color 0.25s ease",
+                    background: "linear-gradient(160deg, hsl(224 20% 9%), hsl(224 18% 6%))",
+                    border: "1px solid rgba(255,255,255,0.08)",
+                    transition: "border-color 0.25s ease, transform 0.2s ease, box-shadow 0.25s ease",
                   }}
-                  onMouseEnter={(e) => { e.currentTarget.style.borderColor = "rgba(249,115,22,0.35)"; }}
-                  onMouseLeave={(e) => { e.currentTarget.style.borderColor = "rgba(255,255,255,0.06)"; }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.borderColor = "rgba(249,115,22,0.5)";
+                    e.currentTarget.style.transform = "translateY(-4px)";
+                    e.currentTarget.style.boxShadow = "0 20px 40px rgba(249,115,22,0.12)";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.borderColor = "rgba(255,255,255,0.08)";
+                    e.currentTarget.style.transform = "translateY(0)";
+                    e.currentTarget.style.boxShadow = "none";
+                  }}
                 >
-                  {/* Animated glow circle */}
+                  
                   <div
-                    className="w-16 h-16 rounded-full flex items-center justify-center mb-4 transition-all duration-300 group-hover:scale-110"
+                    className="w-20 h-20 rounded-2xl flex items-center justify-center mb-5 transition-all duration-300 group-hover:scale-110"
                     style={{
-                      background: "linear-gradient(135deg, rgba(249,115,22,0.18), rgba(249,115,22,0.06))",
-                      border: "2px solid rgba(249,115,22,0.25)",
-                      boxShadow: "0 0 0 0 rgba(249,115,22,0)",
+                      background: "linear-gradient(135deg, rgba(249,115,22,0.22), rgba(249,115,22,0.06))",
+                      border: "2px solid rgba(249,115,22,0.35)",
+                      boxShadow: "0 0 30px rgba(249,115,22,0.1)",
                     }}
                   >
-                    <Wrench size={22} style={{ color: "hsl(32 92% 58%)" }} strokeWidth={1.5} />
+                    <s.icon size={32} style={{ color: "hsl(32 92% 58%)" }} strokeWidth={1.5} />
                   </div>
-                  <p className="text-[10px] font-bold uppercase tracking-[0.18em] mb-1.5" style={{ color: "hsl(32 92% 60%)" }}>{s.title}</p>
-                  <p className="text-xs leading-snug" style={{ color: "hsl(220 8% 52%)" }}>{s.sub}</p>
+                  <p className="text-sm font-black uppercase tracking-[0.18em] mb-2" style={{ color: "hsl(32 92% 62%)" }}>{s.title}</p>
+                  <p className="text-xs font-semibold uppercase tracking-widest mb-3" style={{ color: "hsl(220 8% 45%)" }}>{s.sub}</p>
+                  <p className="text-xs leading-relaxed" style={{ color: "hsl(220 8% 55%)" }}>{s.desc}</p>
 
-                  {/* hover bar */}
-                  <div className="absolute bottom-0 left-0 h-[2px] w-0 group-hover:w-full transition-all duration-500"
+                  
+                  <div className="absolute bottom-0 left-0 h-[3px] w-0 group-hover:w-full transition-all duration-500"
                     style={{ background: "linear-gradient(90deg, hsl(32 92% 54%), transparent)" }} />
-
-                  {/* inset border on hover */}
-                  <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
-                    style={{ boxShadow: "inset 0 0 0 1px rgba(249,115,22,0.2)" }} />
                 </a>
               </Reveal>
             ))}
           </div>
 
-          {/* Partner logos */}
+          
           <Reveal>
             <div>
-              <p className="text-center text-[10px] font-bold uppercase tracking-[0.22em] mb-8" style={{ color: "hsl(220 8% 38%)" }}>
-                Kiemelt partnereink
-              </p>
-              <div className="flex flex-wrap items-center justify-center gap-6 md:gap-10">
+              <div className="flex items-center gap-4 mb-10 justify-center">
+                <div className="h-px flex-1 max-w-[120px]" style={{ background: "linear-gradient(to right, transparent, rgba(255,255,255,0.1))" }} />
+                <p className="text-[11px] font-bold uppercase tracking-[0.28em]" style={{ color: "hsl(220 8% 45%)" }}>
+                  Kiemelt partnereink
+                </p>
+                <div className="h-px flex-1 max-w-[120px]" style={{ background: "linear-gradient(to left, transparent, rgba(255,255,255,0.1))" }} />
+              </div>
+              <div className="flex flex-wrap items-center justify-center gap-4 md:gap-6">
                 {partnerLogos.map((p) => (
                   <div
                     key={p.name}
-                    className="flex items-center gap-2.5 px-5 py-3 rounded-2xl transition-all duration-200 cursor-default"
+                    className="flex items-center gap-4 px-6 py-4 rounded-2xl transition-all duration-200 cursor-default"
                     style={{
-                      background: "rgba(255,255,255,0.03)",
-                      border: "1px solid rgba(255,255,255,0.06)",
+                      background: "hsl(224 18% 8%)",
+                      border: "1px solid rgba(255,255,255,0.09)",
+                      transition: "border-color 0.2s, transform 0.2s, box-shadow 0.2s",
                     }}
-                    onMouseEnter={(e) => { e.currentTarget.style.borderColor = "rgba(255,255,255,0.14)"; e.currentTarget.style.background = "rgba(255,255,255,0.06)"; }}
-                    onMouseLeave={(e) => { e.currentTarget.style.borderColor = "rgba(255,255,255,0.06)"; e.currentTarget.style.background = "rgba(255,255,255,0.03)"; }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.borderColor = "rgba(255,255,255,0.2)";
+                      e.currentTarget.style.transform = "translateY(-2px)";
+                      e.currentTarget.style.boxShadow = "0 8px 24px rgba(0,0,0,0.3)";
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.borderColor = "rgba(255,255,255,0.09)";
+                      e.currentTarget.style.transform = "translateY(0)";
+                      e.currentTarget.style.boxShadow = "none";
+                    }}
                   >
                     <div
-                      className="w-8 h-8 rounded-lg flex items-center justify-center text-[10px] font-black text-white shrink-0"
-                      style={{ background: p.color }}
+                      className="w-12 h-12 rounded-xl flex items-center justify-center text-xs font-black text-white shrink-0"
+                      style={{ background: p.color, boxShadow: `0 4px 14px ${p.color}55` }}
                     >
                       {p.abbr.slice(0, 2)}
                     </div>
-                    <span className="text-sm font-semibold" style={{ color: "hsl(220 8% 62%)" }}>{p.name}</span>
+                    <span className="text-base font-bold" style={{ color: "hsl(220 8% 80%)" }}>{p.name}</span>
                   </div>
                 ))}
               </div>
@@ -1185,9 +1189,7 @@ function Home() {
         </div>
       </section>
 
-      {/* ═══════════════════════════════════════════════════════
-          GALLERY
-      ════════════════════════════════════════════════════════ */}
+      
       <section className="py-28 relative">
         <div className="absolute top-0 left-0 w-[400px] h-[400px] rounded-full opacity-[0.04] blur-[100px] pointer-events-none"
           style={{ background: "radial-gradient(circle, hsl(32 92% 54%), transparent 60%)" }} />
@@ -1207,7 +1209,7 @@ function Home() {
             </div>
           </Reveal>
 
-          {/* Filter tabs */}
+          
           <Reveal delay={60}>
             <div className="flex flex-wrap gap-2 mb-10">
               {galleryFilters.map((f) => (
@@ -1228,7 +1230,7 @@ function Home() {
             </div>
           </Reveal>
 
-          {/* Gallery — editorial list */}
+          
           <div className="space-y-3">
             {galleryItems
               .filter((g) => galleryFilter === "all" || g.category === galleryFilter)
@@ -1241,12 +1243,12 @@ function Home() {
                 >
                   <div className="grid md:grid-cols-[5fr_7fr]" style={{ minHeight: 200 }}>
 
-                    {/* Left — text panel */}
+                    
                     <div
                       className="relative flex flex-col justify-between p-6"
                       style={{ background: "hsl(224 18% 7%)", borderRight: "1px solid rgba(255,255,255,0.04)" }}
                     >
-                      {/* ghosted number */}
+                      
                       <div
                         className="absolute right-4 top-1/2 -translate-y-1/2 font-black leading-none select-none pointer-events-none"
                         style={{ fontSize: "5.5rem", color: "rgba(249,115,22,0.07)", fontWeight: 900, lineHeight: 1 }}
@@ -1281,7 +1283,7 @@ function Home() {
                       </div>
                     </div>
 
-                    {/* Right — image */}
+                    
                     <div className="relative overflow-hidden" style={{ minHeight: 180 }}>
                       <img
                         src={g.img}
@@ -1290,7 +1292,7 @@ function Home() {
                         className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.06]"
                         style={{ filter: "saturate(0.55) contrast(1.18) brightness(0.7)" }}
                       />
-                      {/* diagonal bleed into text panel on desktop */}
+                      
                       <div
                         className="absolute inset-0 hidden md:block"
                         style={{ background: "linear-gradient(to right, hsl(224 18% 7%) 0%, transparent 22%)" }}
@@ -1299,7 +1301,7 @@ function Home() {
 
                   </div>
 
-                  {/* hover orange inset border */}
+                  
                   <div
                     className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
                     style={{ boxShadow: "inset 0 0 0 1px rgba(249,115,22,0.3)" }}
@@ -1310,9 +1312,7 @@ function Home() {
         </div>
       </section>
 
-      {/* ═══════════════════════════════════════════════════════
-          TEAM
-      ════════════════════════════════════════════════════════ */}
+      
       <section id="csapat" className="py-28 relative">
         <div className="container mx-auto px-6">
           <Reveal>
@@ -1353,14 +1353,12 @@ function Home() {
         </div>
       </section>
 
-      {/* ═══════════════════════════════════════════════════════
-          COVERAGE MAP
-      ════════════════════════════════════════════════════════ */}
+      
       <section className="py-28 relative overflow-hidden" style={{ background: "hsl(224 18% 4%)" }}>
         <div className="container mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
 
-            {/* LEFT */}
+            
             <Reveal>
               <div>
                 <Chip>Lefedettség</Chip>
@@ -1388,7 +1386,7 @@ function Home() {
               </div>
             </Reveal>
 
-            {/* RIGHT — interactive county grid */}
+            
             <Reveal delay={100}>
               <div className="relative">
                 <div className="absolute -inset-10 rounded-full opacity-[0.12] blur-[80px] pointer-events-none"
@@ -1398,7 +1396,7 @@ function Home() {
                   Lefedett megyék — mind a 20
                 </p>
 
-                {/* Search */}
+                
                 <div className="relative mb-4">
                   <Search size={13} className="absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none" style={{ color: "hsl(220 8% 45%)" }} />
                   <input
@@ -1413,7 +1411,7 @@ function Home() {
                   />
                 </div>
 
-                {/* County tiles */}
+                
                 <div className="relative grid grid-cols-3 sm:grid-cols-4 gap-2">
                   {counties.map((c) => {
                     const meta = countyMeta[c];
@@ -1440,7 +1438,7 @@ function Home() {
                   })}
                 </div>
 
-                {/* Legend */}
+                
                 <div className="mt-5 flex flex-wrap items-center gap-x-5 gap-y-2 text-xs" style={{ color: "hsl(220 8% 45%)" }}>
                   <span className="flex items-center gap-1.5">
                     <span className="w-3 h-3 rounded-sm inline-block" style={{ background: "rgba(249,115,22,0.5)", border: "1px solid rgba(249,115,22,0.5)" }} />
@@ -1458,9 +1456,7 @@ function Home() {
         </div>
       </section>
 
-      {/* ═══════════════════════════════════════════════════════
-          CTA BAND
-      ════════════════════════════════════════════════════════ */}
+      
       <section
         className="relative overflow-hidden py-20"
         style={{ background: "linear-gradient(135deg, hsl(32 92% 52%), hsl(20 88% 36%))" }}
@@ -1505,9 +1501,7 @@ function Home() {
         </div>
       </section>
 
-      {/* ═══════════════════════════════════════════════════════
-          TESTIMONIALS
-      ════════════════════════════════════════════════════════ */}
+      
       <section id="velemenyek" className="py-28 relative">
         <div className="container mx-auto px-6 relative z-10">
           <Reveal>
@@ -1556,9 +1550,7 @@ function Home() {
         </div>
       </section>
 
-      {/* ═══════════════════════════════════════════════════════
-          FAQ
-      ════════════════════════════════════════════════════════ */}
+      
       <section id="gyik" className="py-28 relative" style={{ background: "hsl(224 18% 4%)" }}>
         <div className="container mx-auto px-6 max-w-4xl">
           <Reveal>
@@ -1614,9 +1606,7 @@ function Home() {
         </div>
       </section>
 
-      {/* ═══════════════════════════════════════════════════════
-          CONTACT
-      ════════════════════════════════════════════════════════ */}
+      
       <section id="kapcsolat" className="py-28 relative">
         <div className="absolute top-0 right-0 w-[500px] h-[500px] opacity-[0.05] blur-[120px] pointer-events-none"
           style={{ background: "radial-gradient(circle, hsl(32 92% 54%), transparent 60%)" }} />
@@ -1624,7 +1614,7 @@ function Home() {
         <div className="container mx-auto px-6 relative z-10">
           <div className="grid lg:grid-cols-2 gap-20">
 
-            {/* LEFT */}
+            
             <Reveal>
               <div>
                 <Chip>Kapcsolat</Chip>
@@ -1661,7 +1651,7 @@ function Home() {
                   ))}
                 </div>
 
-                {/* Trust badges */}
+                
                 <div className="grid grid-cols-3 gap-3 mt-12">
                   {[
                     { icon: Clock, t: "24h kiszállás", d: "Országosan" },
@@ -1678,7 +1668,7 @@ function Home() {
               </div>
             </Reveal>
 
-            {/* RIGHT — form */}
+            
             <Reveal delay={120}>
               <div
                 className="glass-strong rounded-3xl p-10"
@@ -1786,7 +1776,7 @@ function Home() {
         </div>
       </section>
 
-      {/* ── Sticky conversion bar ──────────────────────────── */}
+      
       {showScrollTop && (
         <div
           className="fixed bottom-0 left-0 right-0 z-50 flex items-center gap-3 px-4 py-3"
@@ -1798,7 +1788,7 @@ function Home() {
             animation: "card-in 0.35s cubic-bezier(0.22,1,0.36,1) both",
           }}
         >
-          {/* Left: phone info — hidden on very small screens */}
+          
           <div className="hidden sm:flex items-center gap-3 mr-2">
             <div className="w-9 h-9 rounded-full flex items-center justify-center shrink-0"
               style={{ background: "rgba(249,115,22,0.15)", border: "1px solid rgba(249,115,22,0.3)" }}>
@@ -1810,12 +1800,12 @@ function Home() {
             </div>
           </div>
 
-          {/* Urgency text */}
+          
           <p className="hidden md:block text-xs flex-1" style={{ color: "hsl(220 8% 50%)" }}>
             <span style={{ color: "hsl(32 92% 62%)", fontWeight: 700 }}>⚡ Ma még tudunk időpontot adni</span> — ne halogassa a javítást!
           </p>
 
-          {/* CTAs */}
+          
           <div className="flex items-center gap-2 ml-auto">
             <a
               href="tel:+36706734444"
@@ -1843,16 +1833,12 @@ function Home() {
         </div>
       )}
 
-      {/* ═══════════════════════════════════════════════════════
-          COUNTY MAP MODAL
-      ════════════════════════════════════════════════════════ */}
+      
       {selectedCounty && (
         <CountyMapModal county={selectedCounty} onClose={() => setSelectedCounty(null)} />
       )}
 
-      {/* ═══════════════════════════════════════════════════════
-          LIGHTBOX
-      ════════════════════════════════════════════════════════ */}
+      
       {lightboxItem && (
         <div
           className="fixed inset-0 z-[200] flex items-center justify-center p-4"
@@ -1915,9 +1901,7 @@ function Home() {
         </div>
       )}
 
-      {/* ═══════════════════════════════════════════════════════
-          FOOTER
-      ════════════════════════════════════════════════════════ */}
+      
       <footer className="py-16 relative" style={{ borderTop: "1px solid rgba(255,255,255,0.05)", background: "hsl(224 22% 3%)" }}>
         <div className="container mx-auto px-6">
           <div className="flex flex-col md:flex-row justify-between items-start gap-12 mb-14">

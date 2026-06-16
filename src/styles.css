@@ -79,31 +79,31 @@
 :root {
   --radius: 1.25rem;
 
-  /* Dark industrial canvas */
-  --background: hsl(224 18% 5%);
-  --foreground: hsl(40 20% 97%);
+  /* Brighter industrial canvas */
+  --background: hsl(224 18% 10%);
+  --foreground: hsl(40 25% 98%);
 
-  --card: hsl(224 18% 7%);
-  --card-foreground: hsl(40 20% 97%);
-  --popover: hsl(224 18% 7%);
-  --popover-foreground: hsl(40 20% 97%);
+  --card: hsl(224 18% 16%);
+  --card-foreground: hsl(40 25% 98%);
+  --popover: hsl(224 18% 16%);
+  --popover-foreground: hsl(40 25% 98%);
 
   /* Brand: orange */
-  --primary: hsl(32 92% 54%);
+  --primary: hsl(32 92% 58%);
   --primary-foreground: hsl(0 0% 100%);
 
-  --secondary: hsl(224 18% 10%);
-  --secondary-foreground: hsl(40 20% 97%);
+  --secondary: hsl(224 18% 18%);
+  --secondary-foreground: hsl(40 25% 98%);
 
-  --muted: hsl(224 18% 10%);
-  --muted-foreground: hsl(220 8% 52%);
-  --accent: hsl(32 92% 65%);
-  --accent-foreground: hsl(224 18% 5%);
+  --muted: hsl(224 18% 22%);
+  --muted-foreground: hsl(40 18% 82%);
+  --accent: hsl(32 92% 68%);
+  --accent-foreground: hsl(224 18% 8%);
   --destructive: hsl(0 72% 51%);
   --destructive-foreground: hsl(0 0% 98%);
-  --border: rgba(255, 255, 255, 0.07);
-  --input: rgba(255, 255, 255, 0.06);
-  --ring: hsl(32 92% 54%);
+  --border: rgba(255, 255, 255, 0.12);
+  --input: rgba(255, 255, 255, 0.12);
+  --ring: hsl(32 92% 60%);
 }
 
 @layer base {
@@ -126,25 +126,25 @@
 
 @layer utilities {
   .glass {
-    background: rgba(10, 11, 18, 0.82);
-    backdrop-filter: blur(24px) saturate(1.8) brightness(1.05);
-    -webkit-backdrop-filter: blur(24px) saturate(1.8) brightness(1.05);
-    border: 1px solid rgba(255, 255, 255, 0.07);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    background: rgba(18, 20, 34, 0.86);
+    backdrop-filter: blur(24px) saturate(1.8) brightness(1.08);
+    -webkit-backdrop-filter: blur(24px) saturate(1.8) brightness(1.08);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
   }
   .glass-strong {
-    background: rgba(10, 11, 18, 0.96);
-    backdrop-filter: blur(48px) saturate(2.2) brightness(1.05);
-    -webkit-backdrop-filter: blur(48px) saturate(2.2) brightness(1.05);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    box-shadow: 0 24px 64px rgba(0, 0, 0, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    background: rgba(20, 22, 38, 0.92);
+    backdrop-filter: blur(48px) saturate(2.2) brightness(1.08);
+    -webkit-backdrop-filter: blur(48px) saturate(2.2) brightness(1.08);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 24px 64px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.06);
   }
   .glass-review {
-    background: rgba(14, 15, 24, 0.92);
+    background: rgba(24, 26, 44, 0.94);
     backdrop-filter: blur(24px);
     -webkit-backdrop-filter: blur(24px);
-    border: 1px solid rgba(255, 255, 255, 0.06);
-    box-shadow: 0 24px 48px rgba(0, 0, 0, 0.35);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 24px 48px rgba(0, 0, 0, 0.28);
   }
 
   .marquee-track {
